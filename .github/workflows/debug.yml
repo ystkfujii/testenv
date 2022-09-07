@@ -7,5 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - env:
+          HOGE: ${{ github.head_ref }}
       - run: |
-          echo "name: ${{ github.event_name }} path: ${{ github.event_path }} ref: ${{ github.ref }} head_ref: ${{ github.head_ref }}"
+          echo "name: ${{ github.event_name }} path: ${{ github.event_path }} ref: ${{ github.ref }} head_ref: $HOGE"
