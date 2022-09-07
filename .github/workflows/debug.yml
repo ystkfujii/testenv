@@ -1,0 +1,12 @@
+name: learn-github-actions
+
+
+env:
+  env_1 : hashito
+jobs:
+  check-bats-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: |
+          echo "name: ${{ github.event_name }} path: ${{ github.event_path }} ref: ${{ github.ref }} head_ref: ${{ github.head_ref }}"
